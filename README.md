@@ -89,12 +89,6 @@ LinkedIn: [linkedin.com/in/abdelrahman-mahrouss-1a8bb9333](https://www.linkedin.
 
 ---
 
-## 📸 Preview
-
-![Product Management](https://via.placeholder.com/700x300)
-
----
-
 ## 📃 License
 
 This project is licensed under the MIT License.
