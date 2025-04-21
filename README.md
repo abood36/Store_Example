@@ -1,56 +1,100 @@
-🛒 Online Shop Backend (Java + Spring Boot)
-An elegant and complete backend web application for managing products in an online store. Built using Java, Spring Boot, Thymeleaf, and MySQL, the project supports all essential product operations — from adding and editing products to uploading images and deleting items.
 
-🚀 Features
-🧾 Product Management: Add, edit, delete, and view all products.
+# 🛍️ Online Shop Backend - Java & Spring Boot
 
-🖼️ Image Upload: Save product images with timestamp-based naming.
+This project is a simple yet functional backend for an online shop, built using **Java** and **Spring Boot**. It covers essential operations such as product creation, editing, listing, and deletion. The system supports file upload for product images and stores them in a public directory on the server.
 
-🧹 Image Cleanup: Automatically deletes old image files when a product is updated or deleted.
+---
 
-🧠 Form Validation: Validates user input using @Valid and provides custom error messages.
+## 🚀 Features
 
-📦 Thymeleaf Templates: Clean server-rendered views for forms and lists.
+- Create, edit, and delete products
+- Image upload with file system storage
+- Simple CRUD functionality using Spring MVC
+- Model validation with detailed error handling
+- Data persistence using Spring Data JPA
+- MVC architecture with Thymeleaf integration
 
-🛡️ Error Handling: Graceful handling of common issues with logs.
+---
 
-📁 Technologies Used
+## 🧱 Technologies
 
-Tech	Role
-Java 17+	Programming language
-Spring Boot	Backend framework
-Thymeleaf	Server-side view engine
-MySQL	Relational database
-JPA / Hibernate	Data persistence layer
-Maven	Dependency management
-🧱 Project Structure
-bash
-نسخ
-تحرير
-store_example/
-├── controllers/           # All controller logic
-│   └── productController.java
-├── models/                # DTOs and entity classes
-│   ├── product.java
-│   └── productDTO.java
-├── repositories/
-│   └── productRepo.java   # JPA Repository
-├── public/images/         # Uploaded product images
-├── templates/products/    # Thymeleaf views
-│   ├── index.html
-│   ├── createProduct.html
-│   └── editProduct.html
-├── application.properties # DB configuration
-└── StoreExampleApplication.java
-🧪 Sample Endpoints
+- Java 17+
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- Thymeleaf
+- H2 Database / MySQL (based on configuration)
+- HTML + Bootstrap (in templates)
+- File Upload via MultipartFile
 
-URL	Method	Description
-/products	GET	List all products
-/products/create	GET	Show add product form
-/products/create	POST	Submit new product
-/products/edit?id=1	GET	Show edit product form
-/products/edit	POST	Submit edited product
-/products/delete?id=1	GET	Delete product
+---
 
-🧑‍💻 Author
-Developed by Abdelrahman Mahrouss
+## 📁 Directory Structure
+
+```
+src/
+└── main/
+    ├── java/
+    │   └── com/store_example/store_example/
+    │       ├── controllers/         # Controller for product operations
+    │       │   └── productController.java
+    │       ├── models/              # Product entity and DTO
+    │       └── Repositories/        # Product repository (interface)
+    └── resources/
+        ├── templates/products/      # Views (HTML using Thymeleaf)
+        │   ├── index.html
+        │   ├── createProduct.html
+        │   └── editProduct.html
+        └── static/images/           # Image upload location
+```
+
+---
+
+## 🔧 Setup & Run
+
+1. Clone the repo:
+```bash
+git clone https://github.com/your-username/online-shop-springboot.git
+```
+
+2. Open in your IDE and run the application via `main()`.
+
+3. Access the app:
+```
+http://localhost:8080/products
+```
+
+4. Create or manage products using the form interface.
+
+---
+
+## 📦 Sample Controller Code
+
+```java
+@GetMapping("/products")
+public String getProductList(Model model) {
+    List<product> products = repo.findAll();
+    model.addAttribute("products", products);
+    return "products/index";
+}
+```
+
+---
+
+## 👨‍💻 Author
+
+**Abdelrahman Mahrouss**  
+LinkedIn: [linkedin.com/in/abdelrahman-mahrouss-1a8bb9333](https://www.linkedin.com/in/abdelrahman-mahrouss-1a8bb9333)
+
+---
+
+## 📸 Preview
+
+![Product Management](https://via.placeholder.com/700x300)
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License.
