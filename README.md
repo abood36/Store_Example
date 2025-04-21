@@ -1,2 +1,3 @@
-# Store_Example
-Web application >>> for a Lab Store >>> using >>> java, spring boot, SQL, mySQL, html and bootstrap.
+☕ 2. Online Shop Backend - Java & Spring Boot
+A complete backend REST API for an e-commerce platform, built with Java, Spring Boot, and MySQL, supporting user auth, product and order management.
+
